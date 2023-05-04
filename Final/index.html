@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Numerology Calculator </title>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nunito:wght@300&display=swap');
+
+  .bg-1 { 
+    background-color: #ffd0e0;
+    color: #7f1414;
+  }
+  .bg-2 { 
+    background-color: #ffffff;
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffd0d9;
+    color: #ffffff;
+  }
+  .bg-4 { 
+    background-color: #ffffff;
+    color: #fff;
+  }
+
+  .bg-5 {
+    background-color: #ffe7ee;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font-family: 'Nunito', sans-serif;
+    color:#474e5d;
+  }
+
+  .navbar {
+    background-color: #ed8eaa;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+
+  .infoModal {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: rgba(0, 0, 0, 0.3);
+          z-index: 99999;
+          opacity: 0;
+          transition: opacity 400ms ease-in;
+          pointer-events: none;
+        }
+  
+        .infoModal:target {
+          opacity: 1;
+          pointer-events: auto;
+        }
+  
+        .infoModal > div {
+          width: 400px;
+          height: 400px;
+          position: relative;
+          margin: 10% auto;
+          padding: 30px;
+          background-color: rgba(255, 171, 206, 0.9);
+        }
+  
+        .close {
+          height: 30px;
+          width: 20px;
+          background-color: rgba(0,230,64,0.9);
+          color: black;
+          position: absolute;
+          top: 0;
+          right: 0;
+          text-align: center;
+          text-decoration: none;
+          transition: all 1s ease;
+          line-height: 20px;
+        }
+  
+        .close:hover {
+          background-color: black;
+          color: white;
+        }
+       
+        .btn-lg {
+      background: rgb(255, 113, 144);
+      color: #fff;
+   }
+   
+   .btn-lg:hover {
+      background: rgb(203, 84, 106);
+      color: rgb(255, 255, 255);
+   }
+
+   .btn-default: {
+    background: rgb(255, 113, 144);
+    color: #fff; 
+  } 
+
+  .btn-default:hover {
+    background: rgb(203, 84, 106);
+      color: rgb(255, 255, 255);
+  }
+  </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar text-center">    
+      <header><b>Numerology with Chau Anh</b></header>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel" >
+
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="slide1.jpg" alt="Slide 1" style="height: 400px;">
+      <div class="carousel-caption">
+        <h1>What is Numerology?</h1>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="slide2.jpg" alt="Slide 2" style="height: 400px;">
+      <div class="carousel-caption">
+        <h4>Numerology is the idea that the universe is a system; once broken down we are left with the basic elements, which are numbers.
+By understanding that everything in the world is dependent on, and can equate to numbers, a numerologist can take multiple elements of a person and break them down into meaningful numbers through various methods.</h4>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="slide3.jpg" alt="Slide 3" style="height: 400px;">
+      <div class="carousel-caption">
+        <h4>The meaning of numbers or even when you keep seeing repeating numbers can then be used to help us to better understand the world and ourselves as individuals. This is when you can discover insights about your purpose and personality traits by working out things like your life path number, expression number, and heart's desire number among many others.
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+<div class="container-fluid bg-1 text-center">
+  <h3><b>What is Life Path Number?</b></h3>
+  <p>Your Life Path number is one of the most important numbers in your personal Numerology chart. <br>
+    Calculated using your month, day, and year of birth, your Life Path represents your unique personality and talents, <br>
+    as well as the lessons you're meant to learn in this lifetime. <br>
+    Use the Life Path number calculator below to unlock YOUR destiny now!
+  </p>
+</div>
+
+<div class="container-fluid bg-2 text-center">
+  <h1> <b> Life Path Numer Calculator </b> </h1>
+  <p> Please enter your birthday </p> 
+  
+  <form class="birthdayform"> 
+    <label for="month">Month :</label>
+    <input type="number" id="month" name="month" min="1" max="12" required><br><br>
+
+    <label for="day">Day:</label>
+    <input type="number" id="day" name="day" min="1" max="31" required><br><br>
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" min="1900" max="2100" required><br><br>
+
+    <button type="button" class="btn btn-lg" onclick="calculateLifePathNumber()">Calculate Life Path Number</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateLifePathNumber() {
+      let month = parseInt(document.getElementById("month").value);
+      let day = parseInt(document.getElementById("day").value);
+      let year = parseInt(document.getElementById("year").value);
+
+      let birthday = month + "/" + day + "/" + year;
+      let lifePathNumber = calculateLifePathNumberFromString(birthday);
+
+      document.getElementById("result").innerHTML = "Your Life Path Number is: " + lifePathNumber;
+    }
+
+    function calculateLifePathNumberFromString(birthday) {
+      let birthDate = new Date(birthday);
+      let month = birthDate.getMonth() + 1;
+      let day = birthDate.getDate();
+      let year = birthDate.getFullYear();
+
+      let dateString = month.toString() + day.toString() + year.toString();
+
+      let sum = 0;
+      for (let i = 0; i < dateString.length; i++) {
+        sum += parseInt(dateString[i]);
+      }
+
+      if (sum == 11 || sum == 22) {
+        return sum;
+      } else if (sum == 33) {
+        return 6;
+      } else {
+        while (sum > 9) {
+          let digits = sum.toString().split('');
+          sum = 0;
+          for (let i = 0; i < digits.length; i++) {
+            sum += parseInt(digits[i]);
+          }
+        }
+        return sum;
+      }
+    }
+
+  </script>
+</body>
+</div>
+
+<div class="container-fluid bg-3 text-center">    
+  <h1> <b> Hover on any Life Path Number to explore </b> </h1>
+  <div class="container">
+    <div class="thumb">
+      <img src="1.png" alt="number"/>
+      <article class="mask">
+        <p>You are a natural-born leader who constantly seeks adventure and independence. You are highly motivated and creative. You are loyal and caring toward people around you. You strongly believe in yourself and do not let others influence you. However, you need to be careful not to be too self-centered. </p>
+      </article>
+    </div>
+
+    <div class="thumb">
+      <img src="2.png" alt="number" />
+      <article class="mask">
+        <p>You are a highly emotional individual who seek deep connections. You look for harmony and peace in everything. You have a soothing and calm personality. People love talking to you because you are compassionate and understanding. However, you tend to be shy and sometimes can be insecure.
+        </p>
+      </article>
+    </div>
+
+    <div class="thumb">
+      <img src="3.png" alt="number." />
+      <article class="mask">
+        <p>You are an excellent communicator who always wants to connect with others. You are naturally charismatic, which makes people love to be around you. People would usually describe you as funny and social. Yet, you can find yourself feeling hard to concentrate. Sometimes, you can trust others too easily.</p>
+      </article>
+    </div>
+
+    <div class="thumb">
+      <img src="4.png" alt="number" />
+      <article class="mask">
+        <p>You are a practical and determined person. Friends would describe you as being down to Earth. Your life is centered around work. Friends would describe you as reliable and trushworthy. You can be inflexible and sometimes short-tempered. You can struggle to adapt to new environment. </p>
+      </article>
+    </div>
+
+    <div class="thumb">
+        <img src="5.png" alt="number" />
+        <article class="mask">
+          <p>You constantly seek adventures. You want to live in the moment and always enjoy life to the fullest. People admire you because you are full of energy and passion. You are always ready to take risks. However, it can be hard for you to commit. You can also struggle to focus.</p>
+        </article>
+      </div>
+
+      <div class="thumb">
+        <img src="6.png" alt="number" />
+        <article class="mask">
+          <p>You are nurturing and caring towards the people around you, especially your inner circle. You will do everything you can to protect the people you love. You are very generous and kind. You like to pursue fame and materialistic things. You would often find yourself being scared to be alone.</p>
+        </article>
+      </div>
+
+      <div class="thumb">
+        <img src="7.png" alt="number" />
+        <article class="mask">
+          <p>Gifted with intelligence, you are highly driven by your curiosity and knowledge. You have the tendency to distance yourself from the outside world. People around you admire your achievements. However, you might not appear as the friendliest. You keep emotions to your- self, which can be stressful.</p>
+        </article>
+      </div>
+
+      <div class="thumb">
+        <img src="8.png" alt="number" />
+        <article class="mask">
+          <p>You have high ambition and excellent leadership skills. People will trust you to take the kead. Financial stability is always your prority. You always plan a head. It can be hard for your to express your feelings. You should learn to manage your ego because it can harm you and your relationships.</p>
+        </article>
+      </div>
+  
+      <div class="thumb">
+        <img src="9.png" alt="number" />
+        <article class="mask">
+          <p>You are more mature than your age. You are intelligent and have good intuition. People are attracted to you because you are very knowledgeable. You do not act on impulse but instead have a planned vision ahead. Sometimes, you can overcomplicate simple things.</p>
+        </article>
+      </div>
+  
+      <div class="thumb">
+        <img src="11.png" alt="number" />
+        <article class="mask">
+          <p>You radiate inspiring energy that can influence many people around you. You also try your best to stay true to your morals. You are very sensual and like to express your love for your partner. Unfortunately, you are also very emotional, which can lead to anxiety and depression.</p>
+        </article>
+      </div>
+
+      <div class="thumb">
+        <img src="22.png" alt="number" />
+        <article class="mask">
+          <p>Your life is dedicated to building your legacy and creating a reputation for yourself. You are born to innovate and contribute your greatness to the world. You have trust in yourself and your vision. You are an idealist who has high standards in everything. However, you can be aggressive if people do not please you.</p>
+        </article>
+      </div>
+
+      <div class="thumb">
+        <img src="33.png" alt="number" />
+        <article class="mask">
+          <p>Out of all numbers, you are the most compassionate. People are attracted to you because you have a kind and healing energy. You love to help others. You are also naturally born with artistic gifts. It would be best to learn to control your emotions because you easily panic due to your highly emotional nature.</p>
+        </article>
+      </div>
+</div>
+</div>
+
+<div class="container-fluid bg-5 text-center">    
+
+  <button type="button" class="btn btn-lg" data-toggle="collapse" data-target="#demo">What to learn more about Numerology?</button>
+  <div id="demo" class="collapse">
+    <fieldset class="form">
+      <p> Please fill in the form: </p>
+      <label for="First Name"> First Name:</label>
+      <input type="First Name" name="First Name" /><br>
+      <label for="Last Name"> Last Name:</label>
+      <input type="Last Name" name="Last Name" /><br>
+      <label for="Email">Email:</label>
+      <input type="Email" name="Email" /><br>
+      <label for="Phone Number">Phone Number:</label>
+      <input type="Phone Number" name="Phone Number" /><br>
+      <label for="contact">How do you want to receive notification?</label>
+      <input type="checkbox" name="Email" value="Email" /> Email
+      <input type="checkbox" name="Phone Number" value="Phone Number" /> Phone Number <br>
+      <input type="button" class="btn btn-default" value=Submit me" name="submit-profile" />    
+    </fieldset>
+  </div>
+</div> 
+
+
+
+<footer class="container-fluid bg-4 text-center">
+  <div class="link-container">
+    <a href="#info">More about the creator of this page</a>
+    <br />
+
+    <div id="info" class="infoModal">
+      <div>
+        <a href="#close" title="close" class="close">X</a>
+        <h2>Hello, I am Chau Anh!</h2>
+        <p>I am currently an NYU Undergraduate. I am majoring in Integrate Media and Design. I designed this website as a fast and fun introduction to people who are new to numerology. You can reach me via email contact.chauanh@gmail.com or you can follow me on Instagram at @_whynotchao_!
+        </p>
+      </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
